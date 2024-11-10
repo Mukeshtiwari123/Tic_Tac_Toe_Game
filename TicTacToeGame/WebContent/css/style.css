@@ -1,0 +1,109 @@
+/* General page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Header section */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+    font-size: 2.5rem;
+}
+
+/* Game Board styling */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Game Cell styling */
+#game-board .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100px;
+    width: 100px;
+}
+
+/* Add hover effect */
+#game-board .cell:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.05);
+}
+
+/* When the cell is clicked, show the current player's mark */
+#game-board .cell.X {
+    color: #ff5733; /* Red for X */
+}
+
+#game-board .cell.O {
+    color: #33c3ff; /* Blue for O */
+}
+
+/* Game Status & Player Display */
+#game-status {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Restart Button Styling */
+#restart-button {
+    display: block;
+    margin: 0 auto;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Restart Button Hover Effect */
+#restart-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design: Ensure the game board and buttons are well aligned on small screens */
+@media (max-width: 600px) {
+    #game-board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 5px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #game-status {
+        font-size: 1rem;
+    }
+
+    #restart-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
